@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch via npm",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run","start"],
+            "env": {
+                "PORT": "3000"
+            },
+            // "outFiles": [
+            //     "${workspaceFolder}/**/*.js",
+                
+            // ]
+              
+            
+        },
+        {
+            "name": "Debug Jest Tests",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "/home/giordani/.nvm/versions/node/v16.7.0/bin/node",
+            "runtimeArgs": [
+              "--inspect-brk",
+              "${cwd}/node_modules/jest/bin/jest.js",
+              "--runInBand",
+              "--config",
+              "${cwd}/jest.config.mjs",
+            ],
+            "env": {
+              "NODE_OPTIONS":"--experimental-vm-modules"
+            },
+            
+          }
+
+    ]
+}
+
